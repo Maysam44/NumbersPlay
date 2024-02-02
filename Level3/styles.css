@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    background-image: url("/images/background2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#game-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.747);
+    padding: 20px;
+    border-radius: 10px;
+    height: 50%;
+    width: 25%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#question {
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+
+#answer {
+    width: 40%;
+    height: 10%;
+    border-radius: 10px;
+    /* border-color: #45a04900; */
+    background-color: #ffffffad;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    border-color: #45a049;
+
+
+
+}
+
+#result {
+    font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 
+#answer:hover {
+    border-color: #45a04900;
+
+} */
+
+button {
+    background-color: #4caf50;
+    color: white;
+    /* padding: 10px; */
+    /* border: none; */
+    /* border-radius: 5px; */
+    cursor: pointer;
+    margin-top: 25px;
+    border: 0;
+    border-radius: 46px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    outline: 0;
+    padding: 10px 14px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #45a049;
+    color: white;
+    float: left;
+}
+
+
+.round {
+    border-radius: 50%;
+}
