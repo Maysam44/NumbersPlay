@@ -1,3 +1,8 @@
+var currentQuestion = "";
+var score = 0; // تعريف المتغير الذي سيحمل النتيجة
+var level = 1; // تعريف المتغير الذي سيحمل مستوى اللاعب
+
+
 function generateQuestion() {
 
     var num1 = Math.floor(Math.random() * 100) + 1;
@@ -49,21 +54,61 @@ function checkAnswer() {
 
         if (!isNaN(userAnswer)) {
             if (userAnswer === correctAnswer) {
-                resultParagraph.innerText = "🎉🎉 أحسنت";
+                resultParagraph.innerText = " 🎉🎉 أحسنت";
+                score++; // زيادة النتيجة عند الإجابة الصحيحة
+                
+                // فحص إذا وصل اللاعب للنقاط 20
+                if (score === 20) {
+                    level++; // زيادة مستوى اللاعب
+                    score = 0; // إعادة تعيين عدد النقاط
+                    alert("Congratulations! You've reached level " + level);
+                }
             } else {
-                resultParagraph.innerText = "حاول مرة أخرى ، الاجابة الصحيحة " + correctAnswer + ".";
+                resultParagraph.innerText = "😔❌ حاول مرة أخرى ";
+                
             }
         } else {
-            resultParagraph.innerText = "رجاءاً أدخل رقم";
+            resultParagraph.innerText = "🤗😇رجاءاً أدخل رقم";
         }
 
-        question.innerText = generateQuestion();
         answerInput.value = "";
     } else {
-        question.innerText =  generateQuestion();
+        question.innerText = generateQuestion();
+        currentQuestion = question.innerText; // حفظ السؤال الحالي
         answerInput.value = "";
+
     }
 }
+
+// دالة لتوليد سؤال جديد عند النقر على الزر
+function generateNewQuestion() {
+    var question = document.getElementById("question");
+    var answerInput = document.getElementById("answer");
+    var resultParagraph = document.getElementById("result");
+
+    question.innerText = generateQuestion();
+    currentQuestion = question.innerText; // حفظ السؤال الجديد
+    answerInput.value = "";
+    resultParagraph.innerText = ""; // حذف أي نص ناتج عن الإجابة السابقة
+}
+
+// دالة لعرض النتيجة
+function showScore() {
+    alert("Your score is: " + score);
+}
+
+// توليد سؤال جديد عند تحميل الصفحة
+window.onload = function() {
+    var question = document.getElementById("question");
+    question.innerText = generateQuestion();
+    currentQuestion = question.innerText; // حفظ السؤال الحالي
+        resultParagraph.innerText = ""; // حذف أي نص ناتج عن الإجابة السابقة
+
+}
+
+
+
+
 
 
 document.getElementById("question").innerText =  generateQuestion();
